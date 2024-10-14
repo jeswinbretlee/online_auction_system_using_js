@@ -1,0 +1,35 @@
+<div class="main">
+    <h1>Auction System</h1>
+    <hr>
+    <form id="loginForm"> <!-- Added ID for JavaScript access -->
+        <table>
+            <tr>
+                <td><h4>Select Role</h4></td>
+                <td>
+                    <select id="role" required>
+                        <option value="admin">Admin</option>
+                        <option value="seller">Seller</option>
+                        <option value="buyer">Buyer</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><h4>Username</h4></td>
+                <td><input type="text" id="loginUsername" placeholder="Enter your username" required></td>
+            </tr>
+            <tr>
+                <td><h4>Password</h4></td>
+                <td><input type="password" id="loginPassword" placeholder="Enter your password" required></td>
+            </tr>
+        </table>
+        <div>
+            <input type="submit" value="Login">
+            <input type="reset" value="Reset">
+        </div>
+    </form>
+
+    <p>
+        <a href="" onclick="navigateTo('/register')">Register</a>
+    </p>
+    <div id="message" style="text-align: center; color: red;"></div> <!-- Message display area -->
+</div>

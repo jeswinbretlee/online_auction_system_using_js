@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+thead {
+    background-color: #f8f8f8;
+}
+
+th {
+    text-align: left;
+}
+
+button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c82333;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+</style>
+<body>
+    <header>
+        <h1>Admin Dashboard - Online Auction System</h1>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Manage Products</a>
+            <a href="#">Manage Bids</a>
+            <a href="#">Logout</a>
+        </nav>
+    </header>
+
+    <section class="admin-container">
+        <h2>Product Management</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Starting Bid</th>
+                    <th>Current Highest Bid</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Product A</td>
+                    <td>$50</td>
+                    <td>$100</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="end-auction">End Auction</button>
+                        <button class="remove-product">Remove Product</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Product B</td>
+                    <td>$70</td>
+                    <td>$120</td>
+                    <td>Active</td>
+                    <td>
+                        <button class="end-auction">End Auction</button>
+                        <button class="remove-product">Remove Product</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Product C</td>
+                    <td>$30</td>
+                    <td>$55</td>
+                    <td>Ended</td>
+                    <td>
+                        <button class="remove-product">Remove Product</button>
+                    </td>
+                </tr>
+                <!-- Add more products as needed -->
+            </tbody>
+        </table>
+
+        <h2>Bid Management</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bid ID</th>
+                    <th>Product</th>
+                    <th>Bid Amount</th>
+                    <th>Bidder</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Product A</td>
+                    <td>$100</td>
+                    <td>John Doe</td>
+                    <td>
+                        <button class="remove-bid">Remove Bid</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Product B</td>
+                    <td>$120</td>
+                    <td>Jane Smith</td>
+                    <td>
+                        <button class="remove-bid">Remove Bid</button>
+                    </td>
+                </tr>
+                <!-- Add more bids as needed -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Auction System. Admin Control Panel.</p>
+    </footer>
+</body>
+</html>

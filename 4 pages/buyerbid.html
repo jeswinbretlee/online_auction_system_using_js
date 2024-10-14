@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidding Page</title>
+    <link rel="stylesheet" href="bidding-styles.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.bidding-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-details {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.bidding-details p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+form {
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
+
+</style>
+<body>
+    <header>
+        <h1>Online Auction System</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">My Bids</a>
+            <a href="#">Profile</a>
+            <a href="#">Logout</a>
+        </nav>
+    </header>
+
+    <section class="bidding-container">
+        <h2>Product: <span id="product-name">Product A</span></h2>
+
+        <div class="product-details">
+            <img src="https://via.placeholder.com/250" alt="Product Image">
+            <p id="product-description">This is a placeholder description for Product A.</p>
+        </div>
+
+        <div class="bidding-details">
+            <p><strong>Starting Bid:</strong> $50</p>
+            <p><strong>Current Highest Bid:</strong> $100</p>
+            <p><strong>Minimum Bid Increment:</strong> $5</p>
+        </div>
+
+        <form action="/submit-bid" method="POST" class="bid-form">
+            <h3>Place Your Bid</h3>
+
+            <label for="bid-amount">Enter your bid (USD):</label>
+            <input type="number" id="bid-amount" name="bid-amount" min="105" placeholder="Enter your bid" required>
+
+            <input type="hidden" name="product-id" value="1">
+            <input type="hidden" name="current-bid" value="100">
+            <input type="hidden" name="min-bid-increment" value="5">
+
+            <button type="submit">Place Bid</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Online Auction System. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // You can enhance this with JavaScript to fetch product details and update the bidding dynamically
+        document.getElementById('bid-amount').addEventListener('input', function() {
+            let currentBid = parseFloat(document.querySelector('input[name="current-bid"]').value);
+            let minIncrement = parseFloat(document.querySelector('input[name="min-bid-increment"]').value);
+            let newBid = parseFloat(this.value);
+
+            if (newBid < currentBid + minIncrement) {
+                this.setCustomValidity('Bid must be at least $' + (currentBid + minIncrement));
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+    </script>
+</body>
+</html>
